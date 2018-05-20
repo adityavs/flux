@@ -8,14 +8,18 @@ var HeaderLinks = require('HeaderLinks');
 
 var Site = React.createClass({
   render: function() {
+    var pageTitle = this.props.title
+      ? `${this.props.title} | Flux`
+      : 'Flux | Application Architecture for Building User Interfaces'
+    ;
     return (
       <html>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <title>Flux | Application Architecture for Building User Interfaces</title>
+          <title>{pageTitle}</title>
           <meta name="viewport" content="width=device-width" />
-          <meta property="og:title" content="Flux | Application Architecture for Building User Interfaces" />
+          <meta property="og:title" content={pageTitle} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="http://facebook.github.io/flux/index.html" />
           <meta property="og:description" content="Application Architecture for Building User Interfaces" />
@@ -41,7 +45,7 @@ var Site = React.createClass({
             {this.props.children}
 
             <footer className="wrap">
-              <div className="right">© 2014-2015 Facebook Inc.</div>
+              <div className="right">© 2014-present Facebook Inc.</div>
             </footer>
           </div>
 
@@ -50,8 +54,9 @@ var Site = React.createClass({
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-387204-10', 'facebook.github.io');
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-44373548-20', 'auto');
             ga('send', 'pageview');
 
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)
